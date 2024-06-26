@@ -4,6 +4,10 @@
   margin: 0 auto;
   padding: 0px;
   font-weight: normal;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a,

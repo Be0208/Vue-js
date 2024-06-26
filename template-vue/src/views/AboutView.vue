@@ -1,15 +1,14 @@
-<template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
-</template>
+<script setup lang="ts">
+import MenuApp from '@/components/MenuApp.vue';
+import FooterApp from '@/components/FooterApp.vue';
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+</script>
+
+
+<template>
+  <MenuApp />
+  <main>
+    <h1>SOBRE NOS</h1>
+  </main>
+  <FooterApp />
+</template>

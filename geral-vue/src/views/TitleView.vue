@@ -3,5 +3,5 @@ import TitlePage from '@/components/TitlePage.vue'
 </script>
 
 <template>
-  <TitlePage :title="'É O BE'" />
+  <TitlePage :title="'PAGINA USERS VIEW TITLE'" />
 </template>

@@ -1,3 +1,4 @@
-import type NoteType from './NoteType';
+import type { NoteType } from './NoteType';
+import type { ProductType } from './ProductsType';
 
-export type { NoteType };
+export type { NoteType, ProductType };

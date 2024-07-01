@@ -7,11 +7,3 @@ interface NoteType {
 }
 
 export type { NoteType };
-
-interface HelloType {
-  id: string;
-  name: string;
-  description: string;
-}
-
-export type { HelloType };

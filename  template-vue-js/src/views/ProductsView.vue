@@ -1,37 +1,35 @@
 <script setup lang="ts">
 import MenuApp from '@/components/Menu.vue';
 import FooterApp from '@/components/Footer.vue';
-import ProductsList from '@/components/ProductsList.vue'; // esse é meu slot
-
-// para o meu data:
-import type { ProductType } from '@/types';
+import ProductsList from '@/components/ProductsList.vue';
+import type { ProductType } from '@/types/ProductType';
 import { ref } from 'vue';
+import { onMounted } from 'vue';
+import checkLogged from '@/utils/checkLogged';
 
 const data = ref<ProductType[]>([
-  {
-    id: '1',
-    name: 'caderno',
-    value: 10
-  },
-  {
-    id: '2',
-    name: 'lapis',
-    value: 2
-  }
+  { id: '1', name: 'Caderno', value: 10 },
+  { id: '2', name: 'Boracha', value: 2 }
 ]);
+
+onMounted(() => checkLogged('/products'));
 </script>
 
 <template>
   <MenuApp />
-
   <main>
-    <h1>lista de Produtos</h1>
+    <h1>Lista de produtos</h1>
     <ProductsList :products="data">
+      <template #footer>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab accusamus quaerat, dolorum
+        asperiores deleniti, pariatur iste officia quis cum quos impedit dolore, facere accusantium.
+        Mollitia minus ut porro culpa commodi?
+      </template>
       <template #header>
-        <p>aqui iria a minha descrição no slot header</p>
+        Aqui iria a minha descrição para mostrar em algum lugar. Onde? Em um slot, ou um slot
+        nomeado.
       </template>
     </ProductsList>
   </main>
-
   <FooterApp />
 </template>

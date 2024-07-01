@@ -5,6 +5,7 @@ import { onMounted, ref } from 'vue';
 import { doGet } from '@/services/api';
 import { type NoteType } from '@/types';
 import CardItem from '@/components/CardItem.vue';
+import checkLogged from '@/utils/checkLogged';
 
 const notes = ref<NoteType[]>([]);
 
@@ -16,7 +17,10 @@ const getData = async () => {
   }
 };
 
-onMounted(getData);
+onMounted(() => {
+  getData();
+  checkLogged('/notes');
+});
 </script>
 
 <template>

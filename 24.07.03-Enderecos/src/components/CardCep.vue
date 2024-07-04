@@ -13,8 +13,6 @@ defineProps<CepTypeProps>()
     <p>DDD: {{ data.ddd }}, IBGE: {{ data.ibge }}</p>
   </div>
 </template>
-
- 
 <style scoped>
 .card {
   font-size: 1rem;
@@ -26,31 +24,7 @@ defineProps<CepTypeProps>()
   margin: 1rem;
   padding: 3rem;
 }
-<style scoped>
-:root {
-  --primary-color: rgb(38, 57, 77);
-  --text-color: rgb(63, 63, 63);
-  --border-radius: 0.375rem;
-}
 
-.card {
-  font-size: 1rem;
-  max-width: 60vh;
-  max-height: 40vh;
-  background-color: white;
-  box-shadow: var(--primary-color) 0px 20px 30px -10px;
-  border-radius: var(--border-radius);
-  margin: 1rem;
-  padding: 3rem;
-}
-
-.card p {
-  color: var(--text-color);
-}
-
-h1 {
-  font-weight: 500;
-}
 .card p {
   color: rgb(63, 63, 63);
 }

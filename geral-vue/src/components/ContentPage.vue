@@ -1,34 +1,38 @@
 <script setup lang="ts">
-import TitlePage from './TitlePage.vue'
 
-interface contentPageProps {
-  titlePage: string
-  description: string
-  titleButton: string
-  imgUrl: string
+interface ContentPageProps {
+  titlePage: string;
+  description: string;
+  titleButton: string;
+  imgUrl: string; 
 }
-defineProps<contentPageProps>()
+
+defineProps<ContentPageProps>()
+
+
 </script>
 
 <template>
-  <div class="container">
+ <div class="container">
     <div>
-      <TitlePage :title="titlePage" />
-      <p>
-        {{ description }}
-      </p>
-      <button class="btn">{{ titleButton }}</button>
+     <h1>{{ titlePage }}</h1>
+       
+      <p>{{ description }}</p>
+      <button class="btn">{{titleButton }}</button>
     </div>
 
     <div>
-      <img class="img-content" :src="imgUrl" alt="" />
+      <img class="img-content" :src="imgUrl" alt="">
     </div>
   </div>
+
 </template>
 
 <style>
-.btn {
-  background-color: #ff8533;
+
+.btn{
+  background-color: #FF8533;
+  padding: 16px 8px;
   color: white;
   border: none;
   font-weight: 700;
@@ -36,13 +40,14 @@ defineProps<contentPageProps>()
   margin-top: 20px;
 }
 
-.container {
+
+.container{
   display: flex;
   gap: 15px;
   margin: 100px;
 }
 
-.img-content {
+.img-content{
   height: 400px;
   width: 700px;
 }

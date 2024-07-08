@@ -1,22 +1,23 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
 import { doGet } from '@/services/api'
-import { type PeopleType } from '@/types'
-import CardPeople from '@/components/CardPeople.vue'
+import type { PeopleType } from '@/types/People'
+import { onMounted, ref, watch } from 'vue'
+import CardItem from '@/components/CardItem.vue'
+import { getCars } from '@/services/apiCars'
+import type { CarType } from '@/types/Car'
 
-const people = ref<PeopleType[]>([])
+const cars = ref<CarType[]>([])
 
-const getData = async () => {
-  const data = await doGet('/people')
+async function handleGetCars() {
+  const response = await getCars()
 
-  if (data.length) {
-    people.value = data
+  if (response.carros) {
+    cars.value = response.carros
   }
 }
-onMounted(getData)
 
-watch(people, () => {
-  console.log(people)
+onMounted(() => {
+  handleGetCars()
 })
 </script>
 
@@ -26,31 +27,32 @@ watch(people, () => {
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/users">Users</RouterLink>
+        <RouterLink to="/create-car">cadastrar Carro</RouterLink>
       </nav>
     </header>
-
-    <div class="content-home">
-      <h1>CONSUMO API PESSOAS</h1>
-      <div class="cards-container-home">
-        <div v-for="item in people" :key="item.id" class="cards">
-          <CardPeople :data="item" />
+    <div class="content">
+      <h1>Consumo da Minha API carros</h1>
+      <div class="cards-container">
+        <div v-for="item in cars" :key="item.id" class="card">
+          <p>{{ item.marca }}</p>
+          <p>{{ item.modelo }}</p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .container-home {
   height: 100vh;
-  margin: 0px;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
 
 header {
   background-color: #8d99ae;
+  height: 15%;
   padding: 40px;
 }
 
@@ -60,29 +62,26 @@ nav {
 }
 
 a {
+  text-decoration: none;
   color: black;
   font-weight: 700;
 }
 
-.content-home {
-  height: 100%;
+.content {
+  height: 85%;
   padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-h1 {
-  color: black;
-  font-weight: 700;
+
+.cards-container {
+  padding: 40px;
 }
 
-.cards-container-home {
+.card {
+  border: 2px solid;
   padding: 20px;
-}
-
-.cards {
-  border: 2px solid black;
-  padding: 20px;
-  background-color: #87a8e2;
+  margin: 20px;
 }
 </style>

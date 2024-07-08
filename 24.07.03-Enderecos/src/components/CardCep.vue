@@ -7,13 +7,20 @@ defineProps<CepTypeProps>()
 </script>
 
 <template>
+  <h1 class="title">Lista de endereços</h1>
   <div class="card">
     <h1>Localidade: {{ data.localidade }}, UF: {{ data.uf }}</h1>
     <p>Logradouro: {{ data.logradouro }}, Bairro: {{ data.bairro }}, Cep: {{ data.cep }}</p>
     <p>DDD: {{ data.ddd }}, IBGE: {{ data.ibge }}</p>
   </div>
 </template>
-<style scoped>
+
+<style>
+.title {
+  position: fixed;
+  top: 0;
+  text-align: center;
+}
 .card {
   font-size: 1rem;
   max-width: 60vh;

@@ -3,7 +3,9 @@ import libralyForm from '@/components/libralyForm.vue'
 </script>
 
 <template>
-  <h1>Libraly</h1>
+  <div>
+    <h1>Libraly</h1>
 
-  <libralyForm />
+    <libralyForm />
+  </div>
 </template>

@@ -5,8 +5,9 @@ import TitlePage from '@/components/TitlePage.vue'
 <template>
   <div>
     <TitlePage title="Entre em contato conosco." />
-    
+
     <div class="about">
+      <h1>This is an about page</h1>
       <h1>This is an about page</h1>
     </div>
   </div>

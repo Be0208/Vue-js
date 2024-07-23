@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { doGet } from '@/services/api'
-import type { PeopleType } from '@/types/People'
-import { onMounted, ref, watch } from 'vue'
-import CardItem from '@/components/CardItem.vue'
+import { onMounted, ref} from 'vue'
 import { getCars } from '@/services/apiCars'
 import type { CarType } from '@/types/Car'
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { onMounted, ref} from 'vue'
+import { onMounted, ref } from 'vue'
 import { getCars } from '@/services/apiCars'
+import CardItem from '@/components/CardItem.vue'
 import type { CarType } from '@/types/Car'
 
 const cars = ref<CarType[]>([])
@@ -28,14 +29,14 @@ onMounted(() => {
         <RouterLink to="/create-car">cadastrar Carro</RouterLink>
       </nav>
     </header>
-    <div class="content">
-      <h1>Consumo da Minha API carros</h1>
-      <div class="cards-container">
-        <div v-for="item in cars" :key="item.id" class="card">
-          <p>{{ item.marca }}</p>
-          <p>{{ item.modelo }}</p>
-        </div>
-      </div>
+
+    <div class="content pa-13">
+      <h1 class="mb-4">Consumo da Minha API carros</h1>
+      <v-row>
+        <v-col cols="12" sm="6" md="4" v-for="item in cars" :key="item.marca">
+          <CardItem :data="item" />
+        </v-col>
+      </v-row>
     </div>
   </div>
 </template>

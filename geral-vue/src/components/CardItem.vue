@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import type { PeopleType } from '@/types/People';
-
+import type { CarType } from '@/types/Car'
 
 defineProps<{
-  data: PeopleType
+  data: CarType
 }>()
-
 </script>
 
-
 <template>
-        <h2> {{data.name }} {{ data.last_name }}</h2>
-        <p>Data Criacao: {{data.createdAt }}</p>
-        <p>Telefone: {{ data.phone }}</p>
+  <v-card :title="data.marca" :subtitle="data.modelo" variant="tonal"></v-card>
 </template>

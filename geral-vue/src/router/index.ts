@@ -1,7 +1,7 @@
 import AboutViewVue from '@/views/AboutView.vue'
 import HomeViewVue from '@/views/HomeView.vue'
 import CreateView from '@/views/CreateView.vue'
-import LoginView from '@/views/LoginView.vue'
+import loginView from '@/views/loginView.vue'
 import StoreView from '@/views/StoreView.vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
@@ -20,19 +20,19 @@ const router = createRouter({
       component: AboutViewVue
     },
     {
-      path: '/create',
-      name: 'create',
-      component: CreateView
-    },
-    {
       path: '/create-car',
-      name: 'create',
+      name: 'create-car',
       component: StoreView
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginView
+      component: loginView
+    },
+    {
+      path: '/create',
+      name: 'create',
+      component: CreateView
     }
   ]
 })

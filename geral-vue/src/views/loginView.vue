@@ -64,5 +64,4 @@ if(responseApi){
   padding: 10px;
    
 }
-
 </style>

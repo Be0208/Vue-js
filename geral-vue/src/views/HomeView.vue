@@ -42,6 +42,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.v-row{
+  margin: 0;
+  padding: 0;
+}
 .container-home {
   height: 100vh;
   margin: 0;
